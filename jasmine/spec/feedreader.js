@@ -91,8 +91,6 @@ $(function() {
             isHidden = document.body.classList.contains("menu-hidden")
             expect(isHidden).toBe(true);
         });
-
-
     });
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -119,7 +117,6 @@ $(function() {
             expect(hasEntry.length).not.toBe(0);
         });
 
-        
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
 
@@ -140,9 +137,6 @@ $(function() {
             loadFeed(0,function(){
                 done();
             });
-            
-
-
         });
         
         it('ensures when a new feed is loaded',function(done){
@@ -154,12 +148,8 @@ $(function() {
             done();
             feedDiv = document.querySelector(".feed");
             firstElefFeed1 = feedDiv.querySelector("a").href;
-            });
-
-            
+            }); 
             expect(firstElefFeed0).not.toBe(firstElefFeed1);
-        });
-
-        
+        });       
     });
 }());
