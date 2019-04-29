@@ -1,26 +1,15 @@
 # Project Overview
-
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+This project is to understand and use the jasmine test framework. [Jasmine](http://jasmine.github.io/) 
 
 
 ## Why this Project?
+This project covers different aspects of testing using Jasmine. 
 
-Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development." This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
-
-Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
-
-
-## What will I learn?
-
-You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
-
-
-## How will this help my career?
-
-Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
-
-Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
-
+## The topic covered here to develop test 
+* check for object undefined or not. 
+* check for the string to be null. 
+* check items for non zero length in case of array. 
+* use async callback method to work with async function which might take longer time to load / finish. 
 
 # Development Strategy
 
@@ -60,15 +49,10 @@ For a refresher (or reference) before you begin writing code, we recommend revie
 12. Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes
     * How is this test different from the previous test?
 
-Additionally, note that:
+## The condition followed while doing the project are as below. 
 
- * No test should be dependent on the results of another
- * Callbacks should be used to ensure that feeds are loaded before they are tested
+ * No test should dependent on the results of another
+ * Callbacks used to ensure that feeds are loaded before they are tested
  * Error handling should be implemented for undefined variables and out-of-bound array access
- * When complete, all of your tests should pass
+ * all test passed
 
-When you're all finished, write a `README` file detailing all steps required to successfully run the application. If you have added additional tests, provide documentation for what these future features are and what the tests are checking for.
-
-# Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.

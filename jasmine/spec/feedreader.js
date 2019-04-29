@@ -23,14 +23,16 @@ $(function() {
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
+
             expect(allFeeds.length).not.toBe(0);
         });
 
-        
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+
+         // its testing the urls defined and also urls are not empty. 
         it('all URLs are defined and not empty',function(){
             for (let feed of allFeeds){
                 expect(feed.url).toBeDefined();
@@ -43,6 +45,8 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+          // its testing the name defined and also name are not empty. 
         it('All names are defined and not empty',function(){
             for (let feed of allFeeds){
                 expect(feed.name).toBeDefined();
@@ -60,17 +64,24 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+
+         //checking default hidden status of the menu button. 
         it('The menu element is hidden by default',function(){
             let isHidden = document.body.classList.contains("menu-hidden")
             
             expect(isHidden).toBe(true);
         });
+
+
         
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+          //test the behavior if the menu button clicked and also when it is clicked again. 
+          // it should hide menu again. 
          it('The menu changes visibility when it is clicked.',function(){
             let iconList = document.querySelector(".icon-list");
             iconList.click();
@@ -85,6 +96,7 @@ $(function() {
     });
     /* TODO: Write a new test suite named "Initial Entries" */
 
+    //check for initial feed loading properly. 
     describe('Initial Entries', function() {
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -92,6 +104,8 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+         // this is to make sure the call back is async. 
         beforeEach(function(done){
             loadFeed(0,function(){
                 done();
@@ -109,6 +123,8 @@ $(function() {
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
 
+
+    // test the response of having the new feed selection or feed change. 
     describe("New Feed Selection", function() {
 
         /* TODO: Write a test that ensures when a new feed is loaded
@@ -117,6 +133,7 @@ $(function() {
          */
         let firstElefFeed0 = "";
         let  firstElefFeed1 = "";
+        //it starts with the default feed. 
         beforeEach(function(done){
 
             // code to get first element
@@ -129,18 +146,16 @@ $(function() {
         });
         
         it('ensures when a new feed is loaded',function(done){
+            //get the first url to compare with another feed . 
             let feedDiv = document.querySelector(".feed");
             firstElefFeed0 = feedDiv.querySelector("a").href;
+            //selecting the second feed and check the url value with the first one. 
             loadFeed(1,function(){
             done();
             feedDiv = document.querySelector(".feed");
             firstElefFeed1 = feedDiv.querySelector("a").href;
             });
 
-   
-            
-
-            // code for first element feed1 let feedDiv = document.querySelector(".feed");
             
             expect(firstElefFeed0).not.toBe(firstElefFeed1);
         });
