@@ -101,7 +101,7 @@ $(function() {
         it('Has at least a single .entry element within the .feed',function(){
             let feedDiv = document.querySelector(".feed");
             let hasEntry = feedDiv.querySelectorAll("a.entry-link");
-
+            //console.log("six"+hasEntry.length);
             expect(hasEntry.length).not.toBe(0);
         });
 
@@ -118,36 +118,30 @@ $(function() {
         let firstElefFeed0 = "";
         let  firstElefFeed1 = "";
         beforeEach(function(done){
-            loadFeed(2,function(){
-                done();
-
-            });
 
             // code to get first element
-
+            loadFeed(0,function(){
+                done();
+            });
+            
 
 
         });
-
-        it('ensures when a new feed is loaded',function(){
+        
+        it('ensures when a new feed is loaded',function(done){
             let feedDiv = document.querySelector(".feed");
             firstElefFeed0 = feedDiv.querySelector("a").href;
-            console.log("first");
-            console.log(firstElefFeed0);
-            //loadfeed1  
-            //loadFeed(1,done()); 
-            (function(done){
-                loadFeed(3,function(){
-                    done();
-    
-                }); 
-            });
+            loadFeed(1,function(){
+            done();
             feedDiv = document.querySelector(".feed");
             firstElefFeed1 = feedDiv.querySelector("a").href;
+            });
+
+   
+            
 
             // code for first element feed1 let feedDiv = document.querySelector(".feed");
-            console.log("second");
-            console.log(firstElefFeed1);
+            
             expect(firstElefFeed0).not.toBe(firstElefFeed1);
         });
 
